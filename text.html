@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .head-top {
+        width: 1920px;
+        height: 59px;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .main {
+        width: 1920px;
+        position: fixed;
+        background-color: white;
+        z-index: 2;
+      }
+      .conwrap {
+        width: 1400px;
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .left {
+        width: auto;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .right {
+        width: 230;
+        height: 30px;
+      }
+
+      .lang {
+        width: 90px;
+        height: 30px;
+        transition: all 0.2s ease;
+      }
+
+      .logo {
+        padding: 0;
+        margin: 0;
+        width: 110px;
+        height: 30px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+      }
+
+      .right > ul {
+        width: 220px;
+        height: 20px;
+        margin: 0;
+      }
+
+      .gnb {
+        width: 1920px;
+        height: auto;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      .inner-box > li:hover {
+        color: #c40f39;
+        border-bottom: 2px solid #c40f39;
+        box-sizing: border-box;
+      }
+      .box {
+        position: absolute;
+        top: 90px;
+        width: 1920px;
+        height: 472px;
+        background-color: white;
+        opacity: 0.9;
+        display: none;
+        flex-direction: row;
+      }
+
+      .mini-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .inner-box:hover ~ .box {
+        display: block;
+      }
+
+      .gnb > .box {
+        width: 1920px;
+        height: 472px;
+        background-color: blue;
+        z-index: 3;
+      }
+
+      .bgarea {
+        width: 1920px;
+        height: 650px;
+        position: relative;
+      }
+
+      .i-box {
+        width: 167px;
+        height: 49px;
+      }
+
+      .box:hover {
+        display: block;
+      }
+
+      .ul {
+        width: 167px;
+        height: 409px;
+        margin: 0;
+        padding-top: 10px;
+        padding-left: 0;
+      }
+
+      .i-box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .i-box > a {
+        font-size: 15px;
+        width: 167px;
+        height: 49px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+        margin-top: 15px;
+      }
+
+      .i-box > a:hover {
+        color: #c40f39;
+      }
+
+      .ul > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bgarea > h1 {
+        position: absolute;
+        top: 65%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 40px;
+      }
+
+      .bgarea > p {
+        position: absolute;
+        top: 92%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 15x;
+      }
+
+      .new {
+        width: 1920px;
+        height: auto;
+        padding: 70px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 150px;
+      }
+
+      .conwrap2 {
+        width: 1200px;
+        height: 820px;
+        margin: 0 360px;
+      }
+
+      .our_product {
+        width: 1920px;
+        height: 950px;
+        margin: 70px 0px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .vidio {
+        width: 1920px;
+        height: 1500px;
+      }
+
+      a {
+        color: gray;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 10px;
+      }
+
+      .inner-box {
+        width: auto;
+        height: 89px;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .inner-box > li {
+        width: 167px;
+        height: 89px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gnb > img {
+        width: 162px;
+        height: 90px;
+      }
+
+      .gnb > p {
+        margin: 0;
+      }
+
+      .container {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        position: relative;
+      }
+
+      .bgarea > img {
+        width: 1920px;
+        height: 100%;
+        object-fit: cover;
+        padding-top: 150px;
+      }
+
+      .ikon {
+        width: 66px;
+        height: auto;
+      }
+
+      .toparea {
+        width: 1200px;
+        height: 360px;
+        margin: 22px 0px;
+        display: flex;
+        gap: 22px;
+      }
+
+      .btmarea {
+        width: 1200px;
+        height: suto;
+        margin: 38px 0px;
+        display: flex;
+        gap: 22px;
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      .strange > img {
+        margin-top: 51px;
+      }
+
+      .strange > p {
+        margin-top: 10px;
+      }
+
+      .img01 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .img02 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .img3 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .box1 {
+        position: relative;
+        width: 392px;
+        height: 205px;
+        margin-top: 50px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .box2 {
+        position: relative;
+        width: 786px;
+        height: 360px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .img1 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .box3 {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 392px;
+        height: 292px;
+      }
+
+      .box4 {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 450px;
+        height: 439px;
+      }
+
+      .box5 {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 314px;
+        height: 292px;
+      }
+
+      .product {
+        width: 1920px;
+        height: auto;
+        border: 1px solid black;
+        display: flex;
+        background-color: #e0e0e0;
+        text-align: center;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+
+      .product > h1 {
+        width: 100%;
+        height: 20px;
+      }
+
+      .product > p {
+        text-align: center;
+      }
+
+      .pen {
+        width: 157px;
+        height: 36px;
+        border-radius: 30px;
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+      }
+
+      .pen:hover {
+        border: 2px solid #c40f39;
+        font-style: red;
+      }
+
+      .pen:hover > p {
+        color: #c40f39;
+      }
+
+      .pen > a:hover {
+        color: #c40f39;
+      }
+
+      .type {
+        width: 1920px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .pen > a {
+        font-size: 15px;
+        color: gray;
+      }
+
+      .bottom-content {
+        width: 1920px;
+        height: 360px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+      }
+
+      .last-content {
+        width: 1920px;
+        height: 360px;
+      }
+
+      .news {
+        width: 700px;
+        height: 310px;
+        padding: 45px 49px 0px 0px;
+      }
+
+      .txt > a {
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+      }
+
+      a {
+        font-size: 12px;
+      }
+
+      .inqury {
+        width: 350px;
+        height: 355px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        background-color: #e0e0e0;
+      }
+
+      .in-img1 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 362px;
+        height: 175px;
+        background-color: #c40f39;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .in-img2 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 756px;
+        height: 330px;
+        background-color: #c40f39;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .in-img1 > p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .in-img2 > p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .in-img1 > h2 {
+        color: white;
+      }
+
+      .in-img2 > h2 {
+        color: white;
+      }
+
+      .img01:hover ~ .in-img1 {
+        opacity: 1;
+      }
+
+      .in-img1:hover {
+        opacity: 1;
+      }
+
+      .img02:hover ~ .in-img2 {
+        opacity: 1;
+      }
+
+      .in-img2:hover {
+        opacity: 1;
+      }
+
+      .tits {
+        width: 650px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .tits > h2 {
+        font-size: 20px;
+      }
+
+      .tits > a {
+        font-size: 15px;
+        color: black;
+      }
+
+      h4 {
+        margin: 0;
+      }
+
+      .first {
+        display: flex;
+        width: 650px;
+      }
+
+      .first > img {
+        width: 160px;
+        height: 110px;
+        margin-top: 20px;
+      }
+
+      .sbj {
+        width: 456px;
+        height: 23px;
+        display: flex;
+      }
+
+      .sbj > a {
+        width: 100%;
+        margin-left: 20px;
+        color: black;
+        font-size: 20px;
+      }
+
+      .txt {
+        width: 100%;
+        height: 111px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .txt > p {
+        font-size: 10px;
+        margin-left: 20px;
+        color: #555555;
+      }
+
+      .date {
+        font-size: 12px;
+        text-align: right;
+        color: #888888;
+      }
+
+      .last-content {
+        background-color: #111111;
+        padding: 60px 0 65px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .foot-top {
+        width: 1400px;
+        height: 58px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .foot-top > img {
+        width: 128px;
+        height: 32px;
+      }
+
+      .out {
+        list-style: none;
+        display: flex;
+      }
+
+      .foot-top {
+        width: 1400px;
+        height: 127px;
+      }
+
+      .intext {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+
+      .line {
+        width: 650px;
+        height: 30px;
+        border-bottom: 1px dotted #555555;
+      }
+
+      .list-box > li {
+        margin-top: 10px;
+        margin-left: 30px;
+        font-size: 13px;
+        color: #555555;
+      }
+
+      .list-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+
+      .list {
+        width: 650px;
+      }
+
+      .inqury {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-right: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      .inbox1 {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .inbox1 > img {
+        width: 65px;
+        height: 65px;
+        margin-top: 65px;
+      }
+
+      .inqury > h2 {
+        width: 100%;
+        height: 40px;
+        margin-top: 65px;
+        text-align: center;
+      }
+
+      .inbox2 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .inqury-now {
+        width: 170px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #c40f39;
+        border-radius: 20px;
+        margin-left: 96px;
+      }
+
+      .important {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      .pen-type {
+        width: 250px;
+        height: 505px;
+        background-color: white;
+        border-radius: 15px;
+        overflow: none;
+      }
+
+      .under-txt > p {
+        background-color: white;
+        color: gray;
+      }
+
+      .under-txt > p {
+        margin: 0;
+      }
+
+      .img-box > img {
+        width: 250px;
+        height: 390px;
+        border-radius: 15px;
+      }
+
+      .inqury-now:hover a {
+        color: white;
+      }
+
+      .inqury-now:hover {
+        background-color: #c40f39;
+      }
+
+      .inqury-now > a {
+        color: #c40f39;
+        font-size: 18px;
+      }
+
+      .foot-top {
+        width: 1372px;
+        height: 50px;
+      }
+
+      .last-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .out {
+        margin: 0;
+      }
+
+      .foot-btm {
+        width: 1372px;
+        height: 120px;
+        border-top: 1px dotted #555555;
+        padding: 20px 0 0;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+
+      .foot-box1 {
+        width: 510px;
+        height: 100%;
+      }
+
+      .foot-box2 {
+        width: 400px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .tit {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cc_tel > h1 {
+        width: 100%;
+        height: 30px;
+        margin: 0;
+        font-size: 140%;
+        color: gray;
+        display: flex;
+        justify-content: center;
+      }
+
+      .foot-box3 {
+        width: 472px;
+        height: 100%;
+      }
+
+      .foot-box1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tit {
+        height: 30px;
+      }
+
+      .kakao-btn {
+        width: 157px;
+        height: 34px;
+        border: 1px solid white;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: #555555;
+      }
+
+      .pen:hover a {
+        color: #c40f39;
+      }
+
+      .kakao-btn > a {
+        color: white;
+      }
+
+      .tit > p {
+        color: white;
+        margin: 0;
+      }
+
+      .address > p {
+        font-size: 14px;
+        color: #555555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="head-top">
+        <div class="conwrap">
+          <div class="left">
+            <select class="lang">
+              <option value="KOR">KOR</option>
+              <option value="ENG">ENG</option>
+            </select>
+            <ul class="logo">
+              <li>
+                <img
+                  src="https://www.monami.com/images/common/sns_facebook.gif"
+                />
+              </li>
+              <li>
+                <img src="https://www.monami.com/images/common/sns_insta.gif" />
+              </li>
+              <li>
+                <img
+                  src="https://www.monami.com/images/common/sns_youtube.png"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="right">
+            <ul class="home">
+              <a href="https://www.monami.com/index.php">HOME</a>
+              <span class="divider">|</span>
+              <a href="https://www.monami.com/sitemap.php">SITE MAP</a>
+              <span class="divider">|</span>
+              <a href="https://www.monami.com/customer/inquiry.php"
+                >CONTACT US</a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gnb">
+        <div class="container">
+          <img src="https://www.monami.com/images/common/logo.jpg" />
+          <div class="text"></div>
+          <ul class="inner-box">
+            <li>
+              <p>모나미소개</p>
+            </li>
+            <li>
+              <p>모나미제품</p>
+            </li>
+            <li>
+              <p>NEWS & VIDIO</p>
+            </li>
+            <li>
+              <p>모나미 미술대회</p>
+            </li>
+            <li>
+              <p>고객지원</p>
+            </li>
+            <li>
+              <p>기업 구매/개발</p>
+            </li>
+          </ul>
+          <div class="box">
+            <div class="mini-box">
+              <ul class="ul">
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/ceo.php">CEO 메시지</a>
+                </div>
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/company.php"
+                    >회사정보</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/history.php"
+                    >회사연혁</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/conduct.php"
+                    >윤리강령</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/investment.php"
+                    >투자정보</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/ci.php">CI</a>
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/location.php"
+                    >찾아오시는 길</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/about/safety.php"
+                    >안전보건 경영방침</a
+                  >
+                </div>
+              </ul>
+              <ul class="ul">
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/product/product_list.php?ccode=005"
+                    >프리미엄 펜</a
+                  >
+                </div>
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/product/product_list.php?ccode=003"
+                    >펜 펜슬</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/product/product_list.php?ccode=004"
+                    >마카 컬러링</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/product/product_list.php?ccode=002"
+                    >노트 사무용품</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/product/product_list.php?ccode=001"
+                    >잉크 리필</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a
+                    href="https://www.monami.com/board/board.php?bo_table=catalogue"
+                    >카탈로그</a
+                  >
+                </div>
+              </ul>
+              <ul class="ul">
+                <div class="i-box">
+                  <a href="https://www.monami.com/board/board.php?bo_table=bodo"
+                    >보도자료</a
+                  >
+                </div>
+                <div class="i-box">
+                  <a href="https://www.monami.com/board/board.php?bo_table=vod"
+                    >동영상자료</a
+                  >
+                </div>
+              </ul>
+              <ul class="ul">
+                <div class="i-box">
+                  <a href="https://artcontest.monami.com/w/main.do"
+                    >미술대회 소개</a
+                  >
+                </div>
+                <div class="i-box">
+                  <a
+                    href="https://artcontest.monami.com/w/artcontest/award/award.do"
+                    >수상작 발표</a
+                  >
+                </div>
+              </ul>
+              <ul class="ul">
+                <div class="i-box">
+                  <a href="https://www.monami.com/customer/faq.php"
+                    >자주묻는질문</a
+                  >
+                </div>
+                <div class="i-box">
+                  <a href="https://www.monami.com/customer/inquiry.php"
+                    >문의하기</a
+                  >
+                </div>
+              </ul>
+              <ul class="ul">
+                <div class="i-box">
+                  <a href="https://www.monami.com/customer/inquiry.php?bluk=10"
+                    >대량 구매 문의</a
+                  >
+                </div>
+                <div class="i-box">
+                  <a href="http://mpms.monami.com/promotion/"
+                    >기업 및 단체 구매</a
+                  >
+                </div>
+
+                <div class="i-box">
+                  <a href="https://www.monami.com/industry/industry.php"
+                    >산업용 맞춤 제품개발</a
+                  >
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="ikon">
+            <a href="https://www.monami.com/search.php"
+              ><img src="https://www.monami.com/images/common/btn_search.gif"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bgarea">
+      <img src="https://www.monami.com/images/main/visual1.jpg" />
+      <h1>
+        어쩌면 삶은<br />인생이라는 종이 위에<br />써 내려가는<br />펜의 기록
+        같습니다.
+      </h1>
+      <p>
+        그중에서도 지우고 싶지 않은 기록이 있습니다. <br />
+        모나미는 언제나 당신의 행복한 기록과 함께 합니다.
+      </p>
+    </div>
+    <div class="new">
+      <div class="conwrap2">
+        <div class="toparea">
+          <div class="strange">
+            <h2>New<br />Arrivals</h2>
+            <p>가장 먼저 만나는 설레는 기다림</p>
+            <div class="box1">
+              <img
+                class="img01"
+                src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1699945409grwui60w6u.jpg"
+              />
+              <div class="in-img1">
+                <p>pen</p>
+                <h2>FX ZETA C3</h2>
+              </div>
+            </div>
+          </div>
+          <div class="box2">
+            <img
+              class="img02"
+              src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_169994521784nzg4whv7.jpg"
+            />
+            <div class="in-img2">
+              <p>Note</p>
+              <h2>지퀸스</h2>
+            </div>
+          </div>
+        </div>
+        <div class="btmarea">
+          <div class="box3">
+            <img
+              class="img1"
+              src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715318030bhfwnjum09.jpg"
+            />
+          </div>
+          <div class="box4">
+            <img
+              class="img2"
+              src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1681087061mb8i5l6zdx.jpg"
+            />
+          </div>
+          <div class="box5">
+            <img
+              class="img3"
+              src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715319042z7nuju2l3p.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="our_product">
+        <div class="product">
+          <h1>Best Product</h1>
+          <p>언제 어디서나 생활 속에 함께하는 모나미</p>
+          <div class="type">
+            <div class="pen">
+              <a href="https://www.monami.com/index.php?ccode=005#our_product"
+                >프리미엄 펜</a
+              >
+            </div>
+            <div class="pen">
+              <a href="https://www.monami.com/index.php?ccode=003#our_product"
+                >펜,펜슬</a
+              >
+            </div>
+            <div class="pen">
+              <a href="https://www.monami.com/index.php?ccode=004#our_product"
+                >마카,컬러링</a
+              >
+            </div>
+            <div class="pen">
+              <a href="https://www.monami.com/index.php?ccode=002#our_product"
+                >노트,사무용품</a
+              >
+            </div>
+          </div>
+          <div class="important">
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/2040136001_file6_1713138750ujw6qaj97g.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>프러스펜 3000 프라임</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/8801067962537_file6_16993368522ze8t9y6ul.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 리스펙트 리파인</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/2040048020_file6_1681086837wink3y4zfr.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 아이디 만년필</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/2040048012_file6_1583298386d4wy0fw22t.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 네오 만년필 EF</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/2010209001_file6_15106474920b1lr1fhnf.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 블랙 & 화이트</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/0file6_15106488276b3copnqua.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 골드</h4>
+              </div>
+            </div>
+            <div class="pen-type">
+              <div class="img-box">
+                <img
+                  src="https://dfrkkcv2hg1jc.cloudfront.net/data/product/2010204001_file6_1510645904wfwu2dzbh8.jpg"
+                />
+              </div>
+              <div class="under-txt">
+                <p>프리미엄 펜</p>
+                <h4>153 아이디</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video">
+        <video
+          src="https://dfrkkcv2hg1jc.cloudfront.net/data/video/monami_brand_web_60.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="bottom-content">
+          <div class="news">
+            <div class="tits">
+              <h2>MONAMI NEWS</h2>
+              <a href="https://www.monami.com/board/board.php?bo_table=bodo"
+                >More</a
+              >
+            </div>
+            <div class="first">
+              <img
+                src="https://dfrkkcv2hg1jc.cloudfront.net/data/board/bodo/b_file_1757049215mit7z79997.png"
+              />
+              <div class="txt">
+                <div class="sbj">
+                  <a
+                    href="https://www.monami.com/board/board.php?bo_table=bodo&idx=202"
+                    >모나미, 유성잉크 파이프 팁 기술 돋보이는..</a
+                  >
+                </div>
+                <a
+                  href="https://www.monami.com/board/board.php?bo_table=bodo&idx=202"
+                >
+                  모나미, 유성잉크 파이프 팁 기술 돋보이는신제품 FX ZETA PEAK
+                  출시파이프 <br />
+                  팁으로 잉크 흐름 끊김 없이 안정적이고 ..
+                </a>
+                <span class="date">2025-08-20</span>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="list">
+              <div class="list-box">
+                <li>
+                  <a
+                    href="https://www.monami.com/board/board.php?bo_table=bodo&idx=201"
+                  >
+                    쓰는 펜에서 그리는 펜으로… 모나미, 갤러리아와 협업해 드로잉
+                    원..
+                  </a>
+                </li>
+                <span class="date">2025-07-25</span>
+              </div>
+              <div class="list-box">
+                <li>
+                  <a
+                    href="https://www.monami.com/board/board.php?bo_table=bodo&idx=200"
+                  >
+                    모나미, 브랜드 서포터즈 ‘펜클럽(Pen Club)’ 8기 모집… “신제품
+                    ..
+                  </a>
+                </li>
+                <span class="date">2025-07-17</span>
+              </div>
+              <div class="list-box">
+                <li>
+                  <a
+                    href="https://www.monami.com/board/board.php?bo_table=bodo&idx=199"
+                  >
+                    모나미, 스킨케어 브랜드 '레이어프(LAYER.P)' 와 협업 전시
+                    진행... 모..
+                  </a>
+                </li>
+                <span class="date">2025-06-25</span>
+              </div>
+            </div>
+          </div>
+          <div class="inqury">
+            <div class="inbox1">
+              <img
+                src="https://www.monami.com/images/main/inquiry_tit_bg.png"
+              />
+            </div>
+            <h2>Inqury</h2>
+            <div class="inbox2">
+              <p>
+                언제나 소중한 의견에 귀 기울이겠습니다.<br />
+                궁금한 사항은 문의하세요.
+              </p>
+              <div class="inqury-now">
+                <a href="https://www.monami.com/customer/inquiry.php"
+                  >Inqury Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="shop">
+            <div class="inqury">
+              <div class="inbox1">
+                <img src="https://www.monami.com/images/main/shop_tit_bg.png" />
+              </div>
+              <h2>모나미 네이버 브랜드스토어</h2>
+              <div class="inbox2">
+                <p>
+                  모나미 공식 쇼핑몰입니다.<br />
+                  공식몰만의 다양한 혜택을 만나보세요.
+                </p>
+                <div class="inqury-now">
+                  <a href="https://brand.naver.com/monami">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="last-content">
+          <div class="foot-top">
+            <img src="https://www.monami.com/images/common/foot_logo.jpg" />
+            <ul class="out">
+              <li>
+                <a href="https://www.monami.com/about/ceo.php">회사소개</a>
+                <span class="tag">|</span>
+              </li>
+              <li>
+                <a href="#">개인정보처리방침</a> <span class="tag">|</span>
+              </li>
+              <li><a href="#">이메일무단수집거부</a></li>
+            </ul>
+          </div>
+          <div class="foot-btm">
+            <div class="foot-box1">
+              <div class="tit">
+                <p>INFO</p>
+              </div>
+              <div class="address">
+                <p>
+                  address: 경기도 용인시 수지구 손곡로 17 | TEL:031-216-0153 |
+                  FAX: 031-270-5154 <br />COPYRIGHT(C) MONAMI.CO.,LTD. ALL
+                  RIGHTS RESERVED.
+                </p>
+              </div>
+            </div>
+            <div class="foot-box2">
+              <div class="tit">
+                <p>CUSTOMER CENTER</p>
+              </div>
+              <div class="cc_tel">
+                <h1>080-022-0153</h1>
+              </div>
+              <div class="kakao-btn">
+                <a href="http://pf.kakao.com/_xjViFC/chat">카카오톡 문의 ></a>
+              </div>
+            </div>
+            <div class="foot-box3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
