@@ -412,7 +412,6 @@
       .bottom-content {
         width: 1920px;
         height: 360px;
-        box-sizing: border-box;
         display: flex;
         justify-content: center;
       }
@@ -475,6 +474,108 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+      }
+
+      .in-img3 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 362px;
+        height: 262px;
+        background-color: #c40f39;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .in-img3 > p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .in-img3 > h2 {
+        color: white;
+      }
+
+      .img3:hover ~ .in-img3 {
+        opacity: 1;
+      }
+
+      .in-img3:hover {
+        opacity: 1;
+      }
+
+      .in-img4 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 420px;
+        height: 409px;
+        background-color: #c40f39;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .in-img4 > p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .in-img4 > h2 {
+        color: white;
+      }
+
+      .img4:hover ~ .in-img4 {
+        opacity: 1;
+      }
+
+      .in-img4:hover {
+        opacity: 1;
+      }
+
+      .in-img5 {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 284px;
+        height: 262px;
+        background-color: #c40f39;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .in-img5 > p {
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .in-img5 > h2 {
+        color: white;
+      }
+
+      .img5:hover ~ .in-img5 {
+        opacity: 1;
+      }
+
+      .in-img5:hover {
+        opacity: 1;
       }
 
       .in-img1 > p {
@@ -563,6 +664,7 @@
         height: 111px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         margin-top: 20px;
       }
 
@@ -618,7 +720,7 @@
       .line {
         width: 650px;
         height: 30px;
-        border-bottom: 1px dotted #555555;
+        border-bottom: 1px solid #bbb;
       }
 
       .list-box > li {
@@ -630,20 +732,36 @@
 
       .list-box {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        margin-top: 8px;
+
+        & > li {
+          list-style-type: "- ";
+          margin: 0;
+          margin-left: 7.4px;
+
+          & > a {
+            font-size: 13.5px;
+          }
+        }
+
+        & > span {
+          font-size: 13.5px;
+        }
       }
 
       .list {
         width: 650px;
+        height: 68.85px;
+        padding-top: 10px;
       }
 
       .inqury {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        border-right: 1px solid black;
         box-sizing: border-box;
+        border: none;
       }
 
       .inbox1 {
@@ -664,6 +782,7 @@
         height: 40px;
         margin-top: 65px;
         text-align: center;
+        font-size: 20px;
       }
 
       .inbox2 {
@@ -673,6 +792,11 @@
         justify-content: center;
         text-align: center;
         flex-direction: column;
+
+        & > p {
+          font-size: 13.5px;
+          color: #6a6a6a;
+        }
       }
 
       .inqury-now {
@@ -684,6 +808,7 @@
         border: 2px solid #c40f39;
         border-radius: 20px;
         margin-left: 96px;
+        transition: 0.5s ease;
       }
 
       .important {
@@ -728,7 +853,7 @@
 
       .inqury-now > a {
         color: #c40f39;
-        font-size: 18px;
+        font-size: 13.5px;
       }
 
       .foot-top {
@@ -781,7 +906,8 @@
         width: 100%;
         height: 30px;
         margin: 0;
-        font-size: 140%;
+        font-size: 24px;
+        font-weight: 400;
         color: gray;
         display: flex;
         justify-content: center;
@@ -798,6 +924,10 @@
       }
 
       .tit {
+        /* width: 556.86px;
+        text-align: start; */
+        display: flex;
+        justify-content: start;
         height: 30px;
       }
 
@@ -843,11 +973,13 @@
             </select>
             <ul class="logo">
               <li>
-                <img
-                  src="https://www.monami.com/images/common/sns_facebook.gif"
-                />
+                <a href=""
+                  ><img
+                    src="https://www.monami.com/images/common/sns_facebook.gif"
+                /></a>
               </li>
               <li>
+                <a href=""></a>
                 <img src="https://www.monami.com/images/common/sns_insta.gif" />
               </li>
               <li>
@@ -1069,10 +1201,13 @@
                 class="img01"
                 src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1699945409grwui60w6u.jpg"
               />
-              <div class="in-img1">
-                <p>pen</p>
-                <h2>FX ZETA C3</h2>
-              </div>
+              <a
+                href="http://www.monami.com/product/product_view.php?ccode=005002&idx=188"
+                ><div class="in-img1">
+                  <p>pen</p>
+                  <h2>FX ZETA C3</h2>
+                </div></a
+              >
             </div>
           </div>
           <div class="box2">
@@ -1080,10 +1215,13 @@
               class="img02"
               src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_169994521784nzg4whv7.jpg"
             />
-            <div class="in-img2">
-              <p>Note</p>
-              <h2>지퀸스</h2>
-            </div>
+            <a
+              href="http://www.monami.com/product/product_view.php?ccode=001005&idx=186"
+              ><div class="in-img2">
+                <p>Note</p>
+                <h2>지퀸스</h2>
+              </div></a
+            >
           </div>
         </div>
         <div class="btmarea">
@@ -1092,18 +1230,39 @@
               class="img1"
               src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715318030bhfwnjum09.jpg"
             />
+            <a
+              href="http://www.monami.com/product/product_view.php?ccode=005&idx=248"
+              ><div class="in-img3">
+                <p>Premium pen</p>
+                <h2>프러스펜3000프라임</h2>
+              </div></a
+            >
           </div>
           <div class="box4">
             <img
               class="img2"
               src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1681087061mb8i5l6zdx.jpg"
             />
+            <a
+              href="http://www.monami.com/product/product_view.php?ccode=005&idx=204"
+              ><div class="in-img4">
+                <p>Fountain pen</p>
+                <h2>153 아이디 만년필</h2>
+              </div></a
+            >
           </div>
           <div class="box5">
             <img
               class="img3"
               src="https://dfrkkcv2hg1jc.cloudfront.net/data/main/file1_1715319042z7nuju2l3p.jpg"
             />
+            <a
+              href="http://www.monami.com/product/product_view.php?ccode=003&idx=168"
+              ><div class="in-img5">
+                <p>water-based marker</p>
+                <h2>프러스펜 3000</h2>
+              </div></a
+            >
           </div>
         </div>
       </div>
@@ -1295,7 +1454,7 @@
                 src="https://www.monami.com/images/main/inquiry_tit_bg.png"
               />
             </div>
-            <h2>Inqury</h2>
+            <h2>INQUIRY</h2>
             <div class="inbox2">
               <p>
                 언제나 소중한 의견에 귀 기울이겠습니다.<br />
@@ -1303,7 +1462,7 @@
               </p>
               <div class="inqury-now">
                 <a href="https://www.monami.com/customer/inquiry.php"
-                  >Inqury Now</a
+                  >INQUIRY NOW</a
                 >
               </div>
             </div>
@@ -1320,7 +1479,7 @@
                   공식몰만의 다양한 혜택을 만나보세요.
                 </p>
                 <div class="inqury-now">
-                  <a href="https://brand.naver.com/monami">Buy Now</a>
+                  <a href="https://brand.naver.com/monami">BUY NOW</a>
                 </div>
               </div>
             </div>
